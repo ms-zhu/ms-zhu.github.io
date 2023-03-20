@@ -13,7 +13,7 @@
 
 
 
-<title>面试问题总结 | Blog</title>
+<title>Blog</title>
 
 
 
@@ -119,7 +119,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">面试问题总结</h1>
+            <h1 class="post-title"></h1>
             
                 <div class="post-meta">
                     
@@ -128,7 +128,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">March 16, 2023&nbsp;&nbsp;15:12:08</a>
+                        Date: <a href="#">March 20, 2023&nbsp;&nbsp;22:22:47</a>
                         </span>
                     
                     
@@ -140,17 +140,6 @@
             <h3 id="微信小程序支付流程"><a href="#微信小程序支付流程" class="headerlink" title="微信小程序支付流程"></a>微信小程序支付流程</h3><p>​    支付时，需要传递支付的订单id给后台，后台根据订单id查询到对应的订单信息，然后获取到订单号，金额等信息，然后根据调用接口的用户token，获取到openid，openid的作用就是确定是谁支付的。在根据这些参数，生成相应的签名等信息，后台拿着这些信息，去调用微信支付的接口，最终得到前端调用wx.requestPayment所需要的参数。前端拿着参数，调用对应的接口就可以调出微信支付界面，进行对应的支付</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  pay () &#123;</span><br><span class="line">    wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&quot;后台给的支付接口&quot;</span>,</span><br><span class="line">      <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">orderId</span>: <span class="string">&quot;订单id&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// res.data 中就包含我们调用wx.requestPayment的参数</span></span><br><span class="line">        <span class="keyword">let</span> params = res.<span class="property">data</span>.<span class="property">xxx</span></span><br><span class="line">        <span class="comment">// 这个一旦调用会调起微信支付界面，进行对应的支付操作。</span></span><br><span class="line">        wx.<span class="title function_">requestPayment</span>(&#123;</span><br><span class="line">          ...params,</span><br><span class="line">          <span class="attr">success</span>: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 支付成功</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="微信小程序直播流程"><a href="#微信小程序直播流程" class="headerlink" title="微信小程序直播流程"></a>微信小程序直播流程</h3><p>直播需要资质，然后申请开通微信的直播功能</p>
-<p><img src="https://secure2.wostatic.cn/static/v9JbsAnqUamphgMDQdTtmJ/image.png?auth_key=1678954043-xcc8UC7uMo4eWdL4rusQGu-0-19f8dd2f89ee54212c9883692d43dae0&image_process=resize,w_1133&file_size=159106" alt="img"></p>
-<p>开通后，利用live-pusher可以将手机画面或者摄像头推送到对应的直播服务器中，然后播放段可以利用live-player播放直播流</p>
-<p>本质来讲，就是主播利用直播端，将摄像头画面推送到直播服务器，然后直播服务器转流成为视频播放地址，让播放端播放即可</p>
-<h3 id="typescreipt-泛型问题"><a href="#typescreipt-泛型问题" class="headerlink" title="typescreipt  泛型问题"></a>typescreipt  泛型问题</h3><h3 id="setTimeout误差问题解决"><a href="#setTimeout误差问题解决" class="headerlink" title="setTimeout误差问题解决"></a>setTimeout误差问题解决</h3><h3 id="es5-和es6继承有什么区别"><a href="#es5-和es6继承有什么区别" class="headerlink" title="es5 和es6继承有什么区别"></a>es5 和es6继承有什么区别</h3><ul>
-<li>es5继承是通过在原型上定义函数和属性来实现继承，es6是通过extends关键字实现继承。</li>
-<li>es5继承会继承父类的实例属性和方法，es6继承只能继承父类的原型属性和方法</li>
-<li>es5继承不能实现多继承，es6可以实现多继承</li>
-</ul>
 
         </div>
 
@@ -178,8 +167,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%96%87%E6%A1%A3/">面试题文档</a>
+                <a class="prev" rel="prev" href="/2023/03/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B4%E6%92%AD%E6%B5%81%E7%A8%8B/"></a>
             
+            
+            <a class="next" rel="next" href="/2023/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%96%87%E6%A1%A3/">面试题文档</a>
             
         </section>
 
